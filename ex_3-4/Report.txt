@@ -1,0 +1,34 @@
+L'esercizio 3 del Progetto riguarda l'implementazione di una coda di priorità basata su una struttura dati denominata "heap minimo". 
+In questa particolare coda di priorità, l'elemento con la priorità più alta ha una chiave (key) minore. 
+L'heap minimo viene utilizzato come base per la realizzazione di questa coda, in cui ogni elemento "padre" 
+ha figli con una chiave minore rispetto a entrambi i figli "sinistro" e "destro". 
+Questa implementazione garantisce che gli elementi siano ordinati in base alla priorità. 
+Un metodo fondamentale per la gestione degli elementi è il metodo ricorsivo "sort", 
+che scambia gli elementi all'interno dell'heap per ottenere una struttura ordinata rispettando la priorità di ciascun elemento.
+
+Nell'esercizio 4, invece, viene utilizzata una PriorityQueue per implementare un algoritmo greedy per la scoperta del Grafo minimo. 
+In questo algoritmo, la priorità è assegnata ai nodi in base al cammino minimo dal nodo visitato. 
+Per realizzare questo algoritmo, vengono utilizzate diverse classi, tra cui Graph, Node e Prim. 
+La classe Node definisce un tipo non generico di elementi che costituiscono i nodi del grafo. 
+Ogni nodo è caratterizzato da un identificatore univoco (id), una chiave (key) utilizzata nella priority queue 
+e un identificatore del nodo genitore (id_parent) da cui ha "ereditato" la chiave. 
+La classe Graph, invece, permette di definire il grafo, che può essere diretto o non diretto e può avere o meno etichette. 
+All'interno di questa classe, viene definito un arco composto da un nodo iniziale, un nodo finale e una label che identifica il percorso tra i due nodi. 
+La classe Graph fornisce anche metodi per la corretta creazione del grafo, come addNode e addEdge, che inseriscono rispettivamente nodi e archi nel grafo. 
+Nel caso in cui il grafo non sia diretto, viene automaticamente aggiunto l'arco inverso tra i due nodi, 
+a meno che non sia specificato diversamente. 
+Altri metodi importanti includono numNodes, getEdge e getNeighbours, che restituiscono, rispettivamente, una collezione di tutti i nodi del grafo, tutti gli archi del grafo e tutti i nodi adiacenti a un determinato nodo.
+Infine, la classe Prim implementa un algoritmo greedy per la scoperta del cammino minimo nel grafo. 
+Come per le classi precedenti, anche questa classe è generica e gestisce il polimorfismo dei dati. 
+Il tipo di dato viene definito nel comparatore, in questo caso si tratta di elementi di tipo Node, che vengono definiti utilizzando la classe Node menzionata in precedenza.
+La classe Prim2 implementa la funzione "minimumSpanningForest" per ottenere l'Albero di Copertura Minimo del grafo. 
+Viene utilizzata una PriorityQueue con un comparatore personalizzato per definire la priorità dei nodi. 
+Successivamente, vengono eseguite le operazioni necessarie per creare l'Albero di Copertura Minimo utilizzando l'algoritmo greedy di Prim. 
+Viene creato un nuovo grafo (mst) che rappresenterà l'Albero di Copertura Minimo. Viene verificato se il grafo di input è vuoto, 
+in caso affermativo viene restituito l'Albero di Copertura Minimo vuoto. Viene inizializzata una coda di priorità (queue) contenente tutti i nodi del grafo. 
+Viene impostata la chiave del nodo iniziale (TopNode) a 0. Successivamente, viene eseguito un ciclo fino a quando la coda non è vuota. 
+All'interno del ciclo, viene estratto il nodo con la priorità più alta dalla coda e 
+vengono eseguite operazioni per aggiornare la chiave dei nodi adiacenti, se necessario, e creare gli archi dell'Albero di Copertura Minimo nel grafo mst. Infine, viene restituito l'insieme degli archi dell'Albero di Copertura Minimo.
+Nel metodo main del codice fornito, viene creato un oggetto Graph e viene letto un file CSV contenente le informazioni sul grafo. 
+Viene quindi chiamata la funzione "minimumSpanningForest" per ottenere l'Albero di Copertura Minimo 
+e vengono stampate alcune informazioni su di esso, come il peso totale, il numero di archi, il numero di nodi inseriti nel grafo.

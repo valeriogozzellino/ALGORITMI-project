@@ -1,0 +1,12 @@
+Report Esercizio 1 - Merge Binary Insertion Sort - :
+
+L'algoritmo "Merge Binary Insertion Sort" implementa un'ottimizzazione dell'algoritmo di ordinamento "Merge Sort" combinato con l'algoritmo di ordinamento "Insertion Sort". 
+L'obiettivo è migliorare le prestazioni riducendo il tempo di esecuzione per array di dimensioni piccole, sfruttando le caratteristiche di entrambi gli algoritmi 
+e offrendo quindi un buon compromesso tra velocità di esecuzione e utilizzo delle risorse per array di dimensioni varie. 
+
+La scelta del valore di k dovrebbe essere basata sulla dimensione tipica degli array e sulla complessità dell'operazione di confronto. 
+Il valore ottimale del parametro k dipende dal determinato caso d'uso, l'algoritmo lanciato su input di dimensioni diverse e con tipi di dati diversi, 
+con lo stesso parametro k non offre le stesse prestazioni.
+
+All'interno di questa directory si può trovare una cartella "Graph" contenente un piccolo programma da eseguire per 
+la visualizzazione grafica del comportamento dell'algoritmo rispetto a input differenti in tipo e dimensione di k.

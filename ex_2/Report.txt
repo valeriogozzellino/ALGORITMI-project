@@ -1,0 +1,27 @@
+Il codice fornisce un'implementazione di una Skip List. 
+La Skip List offre una ricerca efficiente di un elemento e un'operazione di inserimento in tempo medio logaritmico.
+
+La Skip List è strutturata come una serie di nodi collegati tra loro, in cui ogni nodo ha un array di puntatori ai nodi successivi su ciascun livello.
+
+La lista principale contiene un nodo di testa e tiene traccia dell'altezza massima raggiunta e consentita per i nodi della Skip List. 
+Questa struttura consente ricerche efficienti e operazioni di inserimento e cancellazione veloci.
+Utilizziamo una costante, max_height, che definisce il numero massimo di puntatori che un nodo può avere. 
+Uno dei vantaggi principali del campo max_height è quello di consentire una maggiore flessibilità nella struttura della Skip List.
+
+La possibilità di regolare l'altezza massima della struttura consente di bilanciare la complessità delle operazioni, come l'inserimento e la ricerca, in base alle esigenze specifiche dell'applicazione.
+
+Questo campo può portare a una diminuzione del tempo medio richiesto per le operazioni di ricerca e inserimento se si aumenta, perché aumenta il numero di collegamenti tra i nodi. 
+Tuttavia, un valore di max_height troppo elevato potrebbe aumentare lo spazio di memoria richiesto dalla struttura e potrebbe non essere vantaggioso in termini di prestazioni. 
+
+L'utilizzo della Skip List offre diversi vantaggi rispetto ad altre strutture dati :
+
+● la Skip List supporta un'operazione di ricerca efficiente in tempo logaritmico; I
+● l'inserimento e la cancellazione degli elementi sono operazioni relativamente semplicied efficienti. 
+Inoltre, la Skip List è una struttura dati dinamica che può crescere e ridursi dinamicamente, senza richiedere riallocazioni costose come un array dinamico.
+
+All'interno della Directory ex_2 è possibile trovare una sotto-directory 'Graph' che contiene un piccolo programma da compilare ed eseguire per visualizzare l'efficienza in termini di tempo
+dell'algoritmo per valori di max_height di dimensione diversa.
+
+N.B. L'implementazione della funzione randomLevel(), favorisce l'utilizzo di max_height dispari, siccome si è riscontrato che:
+se max_height è pari e non viene eseguito l'incremento lvl++, potrebbe essere generato un livello pari che supera il limite max_height, causando un comportamento imprevisto o un errore come la segmentation fault.
+Per questo motivo, l'applicazione di un valore dispari evita cicli ulteriori per la scelta del livello del nuovo nodo, rendendo l'esecuzione sensibilmente migliore.
